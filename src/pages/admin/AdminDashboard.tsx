@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { getNotices, getInquiries } from '../../lib/firebaseDb';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import Card from '../../components/Card';
-import Button from '../../components/Button';
 
 const AdminDashboard: React.FC = () => {
   const [stats, setStats] = useState({
