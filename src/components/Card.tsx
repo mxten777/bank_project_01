@@ -23,18 +23,18 @@ const Card: React.FC<CardProps> = ({
   const { config } = useWhiteLabel();
   const brandColor = config.institutionType === 'nonghyup' ? 'nonghyup' : 'shinhyup';
 
-  // Base styles
-  const baseStyles = 'rounded-2xl transition-all duration-300';
+  // Base styles - rounded-xl, transition-all duration-300
+  const baseStyles = 'rounded-xl transition-all duration-300';
 
-  // Variant styles
+  // Variant styles with shadow-lg
   const variants = {
-    default: 'bg-white border border-gray-200 shadow-sm',
-    elevated: 'bg-white shadow-lg',
-    outlined: `bg-white border-2 border-${brandColor}-200`,
-    filled: `bg-${brandColor}-50 border border-${brandColor}-100`,
+    default: 'bg-white border border-gray-200 shadow-lg',
+    elevated: 'bg-white shadow-xl',
+    outlined: `bg-white border-2 border-${brandColor}-200 shadow-md`,
+    filled: `bg-${brandColor}-50 border border-${brandColor}-100 shadow-md`,
   };
 
-  // Padding styles
+  // Padding styles - p-6 default
   const paddings = {
     none: '',
     sm: 'p-4',
@@ -42,9 +42,9 @@ const Card: React.FC<CardProps> = ({
     lg: 'p-8',
   };
 
-  // Hover effects
+  // Hover effects with scale-105
   const hoverStyles = hover || interactive
-    ? 'hover:shadow-xl hover:-translate-y-1 cursor-pointer'
+    ? 'hover:shadow-premium hover:scale-105 cursor-pointer'
     : '';
 
   // Interactive (glow effect)

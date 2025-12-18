@@ -8,6 +8,34 @@ export default {
     extend: {
       // 🎨 프리미엄 컬러 시스템
       colors: {
+        // Primary 컬러 (파랑)
+        primary: {
+          50: '#e6f2ff',
+          100: '#cce5ff',
+          200: '#99ccff',
+          300: '#66b3ff',
+          400: '#3399ff',
+          500: '#0069ff',  // Primary
+          600: '#0054cc',
+          700: '#003f99',
+          800: '#002a66',
+          900: '#001533',
+          950: '#000a1a',
+        },
+        // Secondary 컬러 (하늘색)
+        secondary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',  // Secondary
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
+        },
         // 농협 브랜드 컬러 (10단계)
         nonghyup: {
           50: '#f0fdf4',
@@ -96,8 +124,10 @@ export default {
         'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
         '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
         'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
+        'premium': '0 20px 40px -10px rgba(0, 0, 0, 0.2), 0 10px 20px -5px rgba(0, 105, 255, 0.1)',
         'glow-green': '0 0 20px rgba(34, 197, 94, 0.3)',
-        'glow-blue': '0 0 20px rgba(59, 130, 246, 0.3)',
+        'glow-blue': '0 0 20px rgba(0, 105, 255, 0.3)',
+        'glow-primary': '0 0 30px rgba(0, 105, 255, 0.4)',
       },
       
       // 📐 Border Radius
