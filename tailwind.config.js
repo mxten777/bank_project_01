@@ -140,15 +140,18 @@ export default {
         '3xl': '2rem',     // 32px
       },
       
-      // ⚡ 애니메이션 시스템
+      // ⚡ 애니메이션 시스템 (Figma Smart Animate 스타일)
       animation: {
-        'fadeIn': 'fadeIn 0.5s ease-out',
-        'fadeInFast': 'fadeIn 0.3s ease-out',
-        'slideDown': 'slideDown 0.4s ease-out',
-        'slideUp': 'slideUp 0.4s ease-out',
-        'slideLeft': 'slideLeft 0.4s ease-out',
-        'slideRight': 'slideRight 0.4s ease-out',
-        'scaleIn': 'scaleIn 0.3s ease-out',
+        'fadeIn': 'fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        'fadeInFast': 'fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slideDown': 'slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slideUp': 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slideLeft': 'slideLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slideRight': 'slideRight 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        'scaleIn': 'scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        'scaleInFast': 'scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        'float': 'float 3s ease-in-out infinite',
+        'shimmer': 'shimmer 2s linear infinite',
         'spin-slow': 'spin 2s linear infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 2s infinite',
@@ -175,9 +178,30 @@ export default {
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         scaleIn: {
-          '0%': { transform: 'scale(0.9)', opacity: '0' },
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-1000px 0' },
+          '100%': { backgroundPosition: '1000px 0' },
+        },
+      },
+      
+      // 🎨 백드롭 블러 (Glassmorphism)
+      backdropBlur: {
+        'xs': '2px',
+      },
+      
+      // 🎭 투명도 확장
+      opacity: {
+        '15': '0.15',
+        '35': '0.35',
+        '65': '0.65',
+        '85': '0.85',
       },
       
       // 🖼️ Container 최대 너비

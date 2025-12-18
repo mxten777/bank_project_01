@@ -1,5 +1,4 @@
 import React from 'react';
-import { useWhiteLabel } from '../context/WhiteLabelContext';
 
 interface CardProps {
   variant?: 'default' | 'elevated' | 'outlined' | 'filled';
@@ -20,21 +19,18 @@ const Card: React.FC<CardProps> = ({
   className = '',
   onClick,
 }) => {
-  const { config } = useWhiteLabel();
-  const brandColor = config.institutionType === 'nonghyup' ? 'nonghyup' : 'shinhyup';
+  // Base styles - 프리미엄 스타일
+  const baseStyles = 'rounded-2xl transition-all duration-500 backdrop-blur-sm will-change-transform';
 
-  // Base styles - rounded-xl, transition-all duration-300
-  const baseStyles = 'rounded-xl transition-all duration-300';
-
-  // Variant styles with shadow-lg
+  // Variant styles with 프리미엄 효과
   const variants = {
-    default: 'bg-white border border-gray-200 shadow-lg',
-    elevated: 'bg-white shadow-xl',
-    outlined: `bg-white border-2 border-${brandColor}-200 shadow-md`,
-    filled: `bg-${brandColor}-50 border border-${brandColor}-100 shadow-md`,
+    default: 'bg-white/95 border border-gray-100 shadow-lg hover:shadow-2xl',
+    elevated: 'bg-white shadow-xl hover:shadow-2xl',
+    outlined: `bg-white border-2 border-primary-200 shadow-lg hover:border-primary-300`,
+    filled: `bg-gradient-to-br from-primary-50 to-secondary-50 border border-primary-100 shadow-lg`,
   };
 
-  // Padding styles - p-6 default
+  // Padding styles
   const paddings = {
     none: '',
     sm: 'p-4',
@@ -42,14 +38,14 @@ const Card: React.FC<CardProps> = ({
     lg: 'p-8',
   };
 
-  // Hover effects with scale-105
+  // Hover effects with 마이크로 인터랙션
   const hoverStyles = hover || interactive
-    ? 'hover:shadow-premium hover:scale-105 cursor-pointer'
+    ? 'hover:shadow-premium hover:scale-[1.02] hover:-translate-y-1 cursor-pointer'
     : '';
 
   // Interactive (glow effect)
   const interactiveStyles = interactive
-    ? `hover:border-${brandColor}-300 hover:ring-4 hover:ring-${brandColor}-100`
+    ? `hover:border-primary-300 hover:ring-4 hover:ring-primary-100 hover:shadow-glow-primary`
     : '';
 
   return (

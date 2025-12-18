@@ -1,3 +1,113 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 🎨 Figma 프리미엄 디자인 시스템 */
+
+/* 전역 폰트 설정 */
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply text-gray-900 bg-white;
+    font-feature-settings: 'kern', 'liga', 'calt';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* 타이포그래피 기본 스타일 */
+  h1 {
+    @apply text-display-sm md:text-display-md lg:text-display-lg;
+  }
+  
+  h2 {
+    @apply text-heading-1;
+  }
+  
+  h3 {
+    @apply text-heading-2;
+  }
+  
+  h4 {
+    @apply text-heading-3;
+  }
+  
+  p {
+    @apply text-body-md;
+  }
+  
+  /* 포커스 아웃라인 프리미엄 스타일 */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 rounded-lg;
+  }
+}
+
+/* 프리미엄 유틸리티 클래스 */
+@layer components {
+  /* 글래스모피즘 효과 */
+  .glass {
+    @apply bg-white bg-opacity-80 backdrop-blur-xl;
+  }
+  
+  .glass-dark {
+    @apply bg-gray-900 bg-opacity-80 backdrop-blur-xl;
+  }
+  
+  /* 그라데이션 텍스트 */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
+  }
+  
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-nonghyup-600 to-nonghyup-400;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-shinhyup-600 to-shinhyup-400;
+  }
+  
+  /* 프리미엄 카드 */
+  .card-premium {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  /* Shimmer 로딩 효과 */
+  .shimmer {
+    @apply bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 bg-[length:1000px_100%] animate-shimmer;
+  }
+  
+  /* 부드러운 스크롤바 */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+}
+
+/* 커스텀 애니메이션 */
+@layer utilities {
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}

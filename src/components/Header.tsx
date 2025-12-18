@@ -10,16 +10,16 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
   
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm backdrop-blur-sm bg-opacity-95">
+    <header className="sticky top-0 z-50 bg-white shadow-lg backdrop-blur-sm bg-opacity-95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* 로고 및 기관명 */}
           <Link to="/" className="flex items-center space-x-3 group" onClick={() => setMobileMenuOpen(false)}>
             {config.logoUrl ? (
-              <img src={config.logoUrl} alt="logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
+              <img src={config.logoUrl} alt="logo" className="h-10 w-auto transition-all duration-300 group-hover:scale-110" />
             ) : (
               <div 
-                className="h-10 w-10 rounded-lg flex items-center justify-center text-white font-bold shadow-md transition-transform group-hover:scale-105"
+                className="h-10 w-10 rounded-xl flex items-center justify-center text-white font-bold shadow-md transition-all duration-300 group-hover:scale-110"
                 style={{ backgroundColor: config.colorTheme.primary }}
               >
                 {config.institutionName.charAt(0)}
@@ -34,10 +34,10 @@ const Header: React.FC = () => {
           <nav className="hidden md:flex space-x-2">
             <Link
               to="/"
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 isActive('/') 
-                  ? 'text-white shadow-md' 
-                  : 'hover:bg-gray-100'
+                  ? 'text-white shadow-md scale-105' 
+                  : 'hover:bg-gray-100 hover:scale-105'
               }`}
               style={isActive('/') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
             >
@@ -45,10 +45,10 @@ const Header: React.FC = () => {
             </Link>
             <Link
               to="/services"
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 isActive('/services') 
-                  ? 'text-white shadow-md' 
-                  : 'hover:bg-gray-100'
+                  ? 'text-white shadow-md scale-105' 
+                  : 'hover:bg-gray-100 hover:scale-105'
               }`}
               style={isActive('/services') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
             >
@@ -56,10 +56,10 @@ const Header: React.FC = () => {
             </Link>
             <Link
               to="/notices"
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 isActive('/notices') 
-                  ? 'text-white shadow-md' 
-                  : 'hover:bg-gray-100'
+                  ? 'text-white shadow-md scale-105' 
+                  : 'hover:bg-gray-100 hover:scale-105'
               }`}
               style={isActive('/notices') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
             >
@@ -67,10 +67,10 @@ const Header: React.FC = () => {
             </Link>
             <Link
               to="/about"
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 isActive('/about') 
-                  ? 'text-white shadow-md' 
-                  : 'hover:bg-gray-100'
+                  ? 'text-white shadow-md scale-105' 
+                  : 'hover:bg-gray-100 hover:scale-105'
               }`}
               style={isActive('/about') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
             >
@@ -78,10 +78,10 @@ const Header: React.FC = () => {
             </Link>
             <Link
               to="/inquiry"
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 isActive('/inquiry') 
-                  ? 'text-white shadow-md' 
-                  : 'hover:bg-gray-100'
+                  ? 'text-white shadow-md scale-105' 
+                  : 'hover:bg-gray-100 hover:scale-105'
               }`}
               style={isActive('/inquiry') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
             >
@@ -114,10 +114,10 @@ const Header: React.FC = () => {
               <Link
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive('/') 
-                    ? 'text-white shadow-sm' 
-                    : 'hover:bg-gray-50'
+                    ? 'text-white shadow-md scale-105' 
+                    : 'hover:bg-gray-50 hover:scale-105'
                 }`}
                 style={isActive('/') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
               >
@@ -126,10 +126,10 @@ const Header: React.FC = () => {
               <Link
                 to="/services"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive('/services') 
-                    ? 'text-white shadow-sm' 
-                    : 'hover:bg-gray-50'
+                    ? 'text-white shadow-md scale-105' 
+                    : 'hover:bg-gray-50 hover:scale-105'
                 }`}
                 style={isActive('/services') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
               >
@@ -138,10 +138,10 @@ const Header: React.FC = () => {
               <Link
                 to="/notices"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive('/notices') 
-                    ? 'text-white shadow-sm' 
-                    : 'hover:bg-gray-50'
+                    ? 'text-white shadow-md scale-105' 
+                    : 'hover:bg-gray-50 hover:scale-105'
                 }`}
                 style={isActive('/notices') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
               >
@@ -150,10 +150,10 @@ const Header: React.FC = () => {
               <Link
                 to="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive('/about') 
-                    ? 'text-white shadow-sm' 
-                    : 'hover:bg-gray-50'
+                    ? 'text-white shadow-md scale-105' 
+                    : 'hover:bg-gray-50 hover:scale-105'
                 }`}
                 style={isActive('/about') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
               >
@@ -162,10 +162,10 @@ const Header: React.FC = () => {
               <Link
                 to="/inquiry"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive('/inquiry') 
-                    ? 'text-white shadow-sm' 
-                    : 'hover:bg-gray-50'
+                    ? 'text-white shadow-md scale-105' 
+                    : 'hover:bg-gray-50 hover:scale-105'
                 }`}
                 style={isActive('/inquiry') ? { backgroundColor: config.colorTheme.primary } : { color: config.colorTheme.text }}
               >

@@ -46,11 +46,11 @@ export const CTA_TEMPLATES = {
 
 // 기본 설정
 export const DEFAULT_CONFIG: WhiteLabelConfig = {
-  institutionType: 'nonghyup',
+  institutionType: 'shinhyup',
   institutionName: 'LocalBank ONE',
-  colorTheme: COLOR_THEMES.nonghyup,
-  mainMessage: MAIN_MESSAGES.nonghyup[0],
-  ctaButtons: CTA_TEMPLATES.nonghyup[0],
+  colorTheme: COLOR_THEMES.shinhyup,
+  mainMessage: MAIN_MESSAGES.shinhyup[0],
+  ctaButtons: CTA_TEMPLATES.shinhyup[0],
 };
 
 // 톤앤매너 설명

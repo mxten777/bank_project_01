@@ -1,5 +1,4 @@
 import React from 'react';
-import { useWhiteLabel } from '../context/WhiteLabelContext';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
@@ -21,19 +20,16 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const { config } = useWhiteLabel();
-  const brandColor = config.institutionType === 'nonghyup' ? 'nonghyup' : 'shinhyup';
+  // Base styles - 프리미엄 스타일
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-premium active:shadow-lg will-change-transform';
 
-  // Base styles - rounded-xl, font-semibold, transition-all duration-300
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-premium';
-
-  // Variant styles with gradient
+  // Variant styles with 프리미엄 효과
   const variants = {
-    primary: `bg-gradient-to-r from-primary-600 to-secondary-600 text-white hover:from-primary-700 hover:to-secondary-700 hover:scale-105 active:scale-100 focus:ring-primary-200`,
-    secondary: `bg-${brandColor}-50 text-${brandColor}-700 hover:bg-${brandColor}-100 border-2 border-${brandColor}-200 hover:border-${brandColor}-300 hover:scale-105 active:scale-100 focus:ring-${brandColor}-100`,
-    outline: `bg-transparent text-primary-600 border-2 border-primary-500 hover:bg-primary-50 hover:scale-105 active:scale-100 focus:ring-primary-100`,
-    ghost: `bg-transparent text-primary-600 hover:bg-primary-50 hover:scale-105 active:scale-100 focus:ring-primary-100 shadow-none`,
-    danger: 'bg-error-500 text-white hover:bg-error-600 hover:scale-105 active:scale-100 focus:ring-error-200',
+    primary: `bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 text-white hover:from-primary-700 hover:via-primary-600 hover:to-secondary-700 hover:scale-[1.02] active:scale-[0.98] focus:ring-primary-200 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700`,
+    secondary: `bg-white text-primary-700 hover:bg-primary-50 border-2 border-primary-200 hover:border-primary-300 hover:scale-[1.02] active:scale-[0.98] focus:ring-primary-100 hover:shadow-glow-primary`,
+    outline: `bg-transparent text-primary-600 border-2 border-primary-500 hover:bg-primary-50 hover:border-primary-600 hover:scale-[1.02] active:scale-[0.98] focus:ring-primary-100`,
+    ghost: `bg-transparent text-primary-600 hover:bg-primary-50 hover:scale-[1.02] active:scale-[0.98] focus:ring-primary-100 shadow-none hover:shadow-sm`,
+    danger: 'bg-gradient-to-r from-error-500 to-error-600 text-white hover:from-error-600 hover:to-error-700 hover:scale-[1.02] active:scale-[0.98] focus:ring-error-200',
   };
 
   // Size styles - text-base for default
